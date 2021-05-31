@@ -1,0 +1,12 @@
+{
+    "name": "neoan3/email-password-auth",
+    "description": "simple user model",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "neoan",
+            "email": "stefan.roehrl@gmail.com"
+        }
+    ],
+    "require": {}
+}
