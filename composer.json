@@ -1,7 +1,7 @@
 {
     "name": "neoan3/user",
     "description": "simple user model",
-    "license": "mit",
+    "license": "MIT",
     "authors": [
         {
             "name": "neoan",
