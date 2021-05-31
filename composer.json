@@ -1,5 +1,5 @@
 {
-    "name": "neoan3/user",
+    "name": "neoan3/email-password-auth",
     "version":"1.0.0",
     "description": "simple user model",
     "license": "MIT",
