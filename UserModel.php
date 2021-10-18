@@ -59,10 +59,10 @@ class UserModel implements Model{
         $credentials = self::validate($credentials);
         $find = self::$db->easy('user.id user.password',['email'=>$credentials['email']]);
         if(empty($find)){
-            throw new RouteException('unauthorized',402);
+            throw new RouteException('unauthorized',401);
         }
         if(!password_verify($credentials['password'], $find[0]['password'])){
-            throw new RouteException('unauthorized',402);
+            throw new RouteException('unauthorized',401);
         }
         return self::get($find[0]['id']);
     }
