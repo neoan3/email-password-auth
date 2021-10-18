@@ -57,19 +57,22 @@ class UserModel implements Model{
     public static function login($credentials)
     {
         $credentials = self::validate($credentials);
-        $find = self::find(['email'=>$credentials['email']]);
+        $find = self::$db->easy('user.id user.password',['email'=>$credentials['email']]);
         if(empty($find)){
             throw new RouteException('unauthorized',402);
         }
         if(!password_verify($credentials['password'], $find[0]['password'])){
             throw new RouteException('unauthorized',402);
         }
-        return $find[0];
+        return self::get($find[0]['id']);
     }
-    
-    public static function create($credentials)
+
+    /**
+     * @throws RouteException
+     */
+    public static function create($modelArray)
     {
-        return self::register($credentials)
+        return self::register($modelArray);
     }
 
     /**
